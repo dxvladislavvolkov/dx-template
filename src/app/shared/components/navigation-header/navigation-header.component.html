@@ -1,0 +1,6 @@
+<dx-toolbar [items]="menuItems" [height]="50"></dx-toolbar>
+<dx-popup [(visible)]="showLoginPopup" height="auto" [width]="300">
+    <div *dxTemplate="let data of 'content'">
+        <app-login (onLoginClick)="loginClick($event)"></app-login>
+    </div>
+</dx-popup>

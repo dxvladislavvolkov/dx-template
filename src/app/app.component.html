@@ -1,0 +1,7 @@
+<dx-slide-out-view [height]="1000" [(menuVisible)]="menuVisible">
+    <navigation-menu *dxTemplate="let item of 'menu'"></navigation-menu>
+    <div *dxTemplate="let item of 'content'">
+        <navigation-header [isMenuOpened]="menuVisible" (onClickMenu)="clickMenu($event)"></navigation-header>
+        <router-outlet></router-outlet>
+    </div>
+</dx-slide-out-view>
