@@ -1,8 +1,26 @@
-<dx-tree-view 
-    [items]="menuItems" 
-    class="navigation-treeview" 
-    (onItemClick)="onItemSelectionChanged($event)" 
-    [selectByClick]="true"
-    [width]="200"
-    selectionMode="single">
-</dx-tree-view>
+<div class="menu-header">
+    <dx-button
+        icon="menu"
+        text="Demo"
+        (onClick)="showMenu()"
+        [height]="50"></dx-button>
+</div>
+<dx-accordion
+    [multiple]="true"
+    [collapsible]="true"
+    [width]="300"
+    [dataSource]="menuItems">
+    <div *dxTemplate="let menuItem of 'title'">
+        <span>{{menuItem.name}}</span>
+    </div>
+    <div *dxTemplate="let menuItem of 'item'">
+        <dx-tree-view 
+            [items]="menuItem.subMenu" 
+            class="navigation-treeview" 
+            (onItemClick)="onItemSelectionChanged($event)" 
+            [selectByClick]="true"
+            [width]="200"
+            selectionMode="single">
+        </dx-tree-view>
+    </div>
+</dx-accordion>

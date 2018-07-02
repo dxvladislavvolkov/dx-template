@@ -1,4 +1,4 @@
-import { Component, NgModule, EventEmitter, Input, Output } from '@angular/core';
+import { Component, NgModule, EventEmitter, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { LoginModule } from '@app/components/login/login.component';
@@ -9,7 +9,7 @@ import { DxPopupModule } from 'devextreme-angular/ui/popup';
 @Component({
     selector: 'navigation-header',
     styles: [`
-        ::ng-deep .dx-toolbar .dx-toolbar-items-container {
+        :host ::ng-deep .dx-toolbar .dx-toolbar-items-container {
             height: 100%;
         }
     `],
@@ -17,8 +17,7 @@ import { DxPopupModule } from 'devextreme-angular/ui/popup';
 })
 
 export class NavigationHeaderComponent {
-    @Output() onClickMenu = new EventEmitter<boolean>();
-    @Input() isMenuOpened: boolean;
+    @Input() selectedItem: string;
     showLoginPopup = false;
     user: any = null;
     menuItems: any;
@@ -26,16 +25,6 @@ export class NavigationHeaderComponent {
 
     constructor() {
         this.menuItems = [{
-            location: 'before',
-            widget: 'dxButton',
-            options: {
-                icon: 'menu',
-                onClick: () => {
-                    console.log(this.isMenuOpened);
-                    this.onClickMenu.emit(this.isMenuOpened);
-                }
-            }
-        }, {
             location: 'after',
             widget: 'dxButton',
             locateInMenu: 'auto',

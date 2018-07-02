@@ -1,0 +1,34 @@
+<div class="card-container">
+    <card title="Simple Chart">
+        <dx-chart
+            id="chart"
+            title="World Population by Decade"
+            [dataSource]="populationData">
+            <dxo-legend [visible]="false"></dxo-legend>
+            <dxi-series type="bar"></dxi-series>
+            <dxo-argument-axis [tickInterval]="10">
+                <dxo-label>
+                    <dxo-format type="decimal"></dxo-format>
+                </dxo-label>
+            </dxo-argument-axis>
+        </dx-chart>
+    </card>
+    <card title="Pie Chart">
+        <dx-pie-chart
+            id="pie"
+            title="Area of Countries"
+            palette="bright"
+            [dataSource]="areas">
+            <dxi-series
+                argumentField="country"
+                valueField="area">
+                <dxo-label [visible]="true">
+                    <dxo-connector
+                        [visible]="true"
+                        [width]="1"></dxo-connector>
+                </dxo-label>
+            </dxi-series>
+            <dxo-size [width]="500"></dxo-size>
+        </dx-pie-chart>
+    </card>
+</div>

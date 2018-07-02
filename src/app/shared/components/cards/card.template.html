@@ -1,0 +1,7 @@
+<div *ngIf="title" class="jsa-card-header" (click)="toggleExpanded()">
+        <h4 class="jsa-card-title">{{title}}</h4>
+    </div>
+    <div class="jsa-card-body" [class.card-body-collapsed]="expanded">
+        <ng-content></ng-content>
+    </div>
+    
