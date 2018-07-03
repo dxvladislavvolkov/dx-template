@@ -1,4 +1,4 @@
-<dx-toolbar [width]="270" [height]="70">
+<dx-toolbar class="dx-theme-accent-as-background-color">
     <dxi-item 
         location="before"
         widget="dxButton"
@@ -13,7 +13,6 @@
 <dx-accordion
     [multiple]="true"
     [collapsible]="true"
-    [width]="270"
     [dataSource]="menuItems">
     <div *dxTemplate="let menuItem of 'item'">
         <dx-tree-view 
@@ -21,7 +20,6 @@
             class="navigation-treeview" 
             (onItemClick)="onItemSelectionChanged($event)" 
             [selectByClick]="true"
-            [width]="200"
             selectionMode="single">
         </dx-tree-view>
     </div>

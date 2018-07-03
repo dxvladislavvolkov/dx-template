@@ -13,22 +13,14 @@ export class NavigationMenuComponent implements OnInit {
   @Output() selectedItemsChanged = new EventEmitter<string>();
   @Input() isMenuOpened: boolean;
   menuItems = [{ 
-    title: "Desktop",
+    title: "Menu",
       icon: "home",
       subMenu: [{
-        text: "Client",
+        text: "Home",
         path: "empty"
       }, {
-        text: "Sales",
-        items: [{
-          text: "Sales1",
-          path: "empty"
-        }, {
-          text: "Sales2",
-          path: "empty"
-        }]
-      }, {
-        text: "Maps"
+        text: "About",
+        path: "empty"
       }]
     }
   ];
