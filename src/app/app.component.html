@@ -1,7 +1,0 @@
-<dx-slide-out-view [height]="1000" swipeEnabled="false" [(menuVisible)]="menuVisible">
-    <navigation-menu *dxTemplate="let item of 'menu'" [isMenuOpened]="menuVisible" (selectedItemsChanged)="selectedItemsChanged($event)" (onClickMenu)="clickMenu($event)"></navigation-menu>
-    <div *dxTemplate="let item of 'content'">
-        <navigation-header [selectedItem]="selectedItem"></navigation-header>
-        <router-outlet></router-outlet>
-    </div>
-</dx-slide-out-view>
