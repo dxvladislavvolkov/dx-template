@@ -1,4 +1,11 @@
-<dx-toolbar [height]="50">
+<dx-toolbar [height]="70">
+    <dxi-item 
+        location="before"
+        locateInMenu="auto">
+        <div *dxTemplate>
+            <h2 class="page-name">{{selectedItem}}</h2>
+        </div>
+    </dxi-item>
     <dxi-item 
         location="after"
         widget="dxButton"
@@ -13,6 +20,18 @@
         locateInMenu="auto"
         [visible]="!isUserAuthorized"
         [options]="buttonOptions">
+    </dxi-item>
+    <dxi-item 
+        location="after"
+        locateInMenu="auto"
+        [visible]="!isUserAuthorized"
+        [options]="buttonOptions">
+    </dxi-item>
+    <dxi-item 
+        location="after"
+        locateInMenu="auto"
+        [visible]="isUserAuthorized"
+        [html]="userTemplate">
     </dxi-item>
 </dx-toolbar>
 <dx-popup [(visible)]="showLoginPopup" height="auto" [width]="300">

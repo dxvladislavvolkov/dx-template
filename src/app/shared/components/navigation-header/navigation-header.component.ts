@@ -8,12 +8,12 @@ import { DxPopupModule } from 'devextreme-angular/ui/popup';
 
 @Component({
     selector: 'navigation-header',
+    templateUrl: 'navigation-header.component.html',
     styles: [`
-        :host ::ng-deep .dx-toolbar .dx-toolbar-items-container {
-            height: 100%;
+        .page-name {
+            margin-left: 30px;
         }
-    `],
-    templateUrl: 'navigation-header.component.html'
+    `]
 })
 
 export class NavigationHeaderComponent {
@@ -26,7 +26,7 @@ export class NavigationHeaderComponent {
         icon: 'user',
         onClick: this.onShowLoginPopup.bind(this)
     };
-    userTemplate = '<div class=\'toolbar-user\'>'+ this.user +'</div>';
+    userTemplate = '<div class=\'toolbar-user\'>Some user</div>';
 
     constructor() {}
 
@@ -38,10 +38,6 @@ export class NavigationHeaderComponent {
         this.user = args.login;
         this.showLoginPopup = false;
         this.isUserAuthorized = true;
-    }
-
-    onLogoutClick() {
-
     }
 }
 

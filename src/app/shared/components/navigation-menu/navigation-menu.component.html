@@ -1,10 +1,15 @@
-<div class="menu-header">
-    <dx-button
-        icon="menu"
-        text="Demo"
-        (onClick)="showMenu()"
-        [height]="50"></dx-button>
-</div>
+<dx-toolbar [width]="270" [height]="70">
+    <dxi-item 
+        location="before"
+        widget="dxButton"
+        locateInMenu="auto"
+        [options]="{
+            icon: 'menu',
+            text: 'Demo',
+            onClick: showMenu
+        }">
+    </dxi-item>
+</dx-toolbar>
 <dx-accordion
     [multiple]="true"
     [collapsible]="true"
