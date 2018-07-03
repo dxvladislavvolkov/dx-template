@@ -46,6 +46,9 @@ import { Router } from '@angular/router';
       :host ::ng-deep .dx-accordion-item-opened + .dx-accordion-item.dx-state-hover:not(.dx-state-focused) {
         border-top-color: rgba(221, 221, 221, 0.1);
       }
+      :host ::ng-deep .dx-accordion-item-title .dx-icon {
+        color: #fff;
+      }
   `]
 })
 export class NavigationMenuComponent implements OnInit {
@@ -53,7 +56,8 @@ export class NavigationMenuComponent implements OnInit {
   @Output() selectedItemsChanged = new EventEmitter<string>();
   @Input() isMenuOpened: boolean;
   menuItems = [
-    { name: "Desktop",
+    { title: "Desktop",
+      icon: "home",
       subMenu: [{
         text: "Client",
         path: "client"
@@ -70,7 +74,8 @@ export class NavigationMenuComponent implements OnInit {
         text: "Maps"
       }]
     }, {
-      name: "Service",
+      title: "Service",
+      icon: "money",
       subMenu: [{
         text: "Client"
       }, {
@@ -84,7 +89,7 @@ export class NavigationMenuComponent implements OnInit {
         text: "Maps"
       }]
     }
-  ]
+  ];
 
   constructor(private router: Router) { }
 

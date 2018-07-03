@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  menuVisible = false;
+  menuVisible = true;
   selectedItem="";
 
   clickMenu(value) {

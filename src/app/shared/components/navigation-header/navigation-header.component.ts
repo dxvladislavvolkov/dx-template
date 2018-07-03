@@ -20,28 +20,24 @@ export class NavigationHeaderComponent {
     @Input() selectedItem: string;
     showLoginPopup = false;
     user: any = null;
-    menuItems: any;
-    
+    isUserAuthorized = false;
+    buttonOptions = {
+        text: 'Login',
+        icon: 'user',
+        onClick: this.onShowLoginPopup.bind(this)
+    };
+    userTemplate = '<div class=\'toolbar-user\'>'+ this.user +'</div>';
 
-    constructor() {
-        this.menuItems = [{
-            location: 'after',
-            widget: 'dxButton',
-            locateInMenu: 'auto',
-            options: {
-                text: 'Login',
-                icon: 'user',
-                onClick: this.onShowLoginPopup.bind(this)
-            }
-        }]
-    }
+    constructor() {}
 
     onShowLoginPopup() {
         this.showLoginPopup = true;
     }
 
     loginClick(args) {
-        alert(args.login + ' ' + args.password);
+        this.user = args.login;
+        this.showLoginPopup = false;
+        this.isUserAuthorized = true;
     }
 
     onLogoutClick() {

@@ -1,4 +1,20 @@
-<dx-toolbar [items]="menuItems" [height]="50"></dx-toolbar>
+<dx-toolbar [height]="50">
+    <dxi-item 
+        location="after"
+        widget="dxButton"
+        locateInMenu="auto"
+        [options]="{
+            icon: 'message'
+        }">
+    </dxi-item>
+    <dxi-item 
+        location="after"
+        widget="dxButton"
+        locateInMenu="auto"
+        [visible]="!isUserAuthorized"
+        [options]="buttonOptions">
+    </dxi-item>
+</dx-toolbar>
 <dx-popup [(visible)]="showLoginPopup" height="auto" [width]="300">
     <div *dxTemplate="let data of 'content'">
         <app-login (onLoginClick)="loginClick($event)"></app-login>

@@ -8,11 +8,8 @@
 <dx-accordion
     [multiple]="true"
     [collapsible]="true"
-    [width]="300"
+    [width]="270"
     [dataSource]="menuItems">
-    <div *dxTemplate="let menuItem of 'title'">
-        <span>{{menuItem.name}}</span>
-    </div>
     <div *dxTemplate="let menuItem of 'item'">
         <dx-tree-view 
             [items]="menuItem.subMenu" 
