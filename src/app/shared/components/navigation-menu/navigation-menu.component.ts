@@ -1,6 +1,5 @@
 import { Component, NgModule, Output, Input, EventEmitter, OnInit } from '@angular/core';
 import { DxTreeViewModule } from 'devextreme-angular/ui/tree-view';
-import { DxAccordionModule } from 'devextreme-angular/ui/accordion';
 import { DxToolbarModule } from 'devextreme-angular/ui/toolbar';
 import { Router } from '@angular/router';
 
@@ -13,9 +12,9 @@ export class NavigationMenuComponent implements OnInit {
   @Output() selectedItemsChanged = new EventEmitter<string>();
   @Input() isMenuOpened: boolean;
   menuItems = [{ 
-    title: "Menu",
+    text: "Menu",
       icon: "home",
-      subMenu: [{
+      items: [{
         text: "Home",
         path: "home"
       }, {
@@ -41,7 +40,7 @@ export class NavigationMenuComponent implements OnInit {
 }
 
 @NgModule({
-  imports: [ DxTreeViewModule, DxToolbarModule, DxAccordionModule ],
+  imports: [ DxTreeViewModule, DxToolbarModule ],
   declarations: [ NavigationMenuComponent ],
   exports: [ NavigationMenuComponent ]
 })

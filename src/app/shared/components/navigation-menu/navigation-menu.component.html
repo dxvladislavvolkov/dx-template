@@ -10,17 +10,10 @@
         }">
     </dxi-item>
 </dx-toolbar>
-<dx-accordion
-    [multiple]="true"
-    [collapsible]="true"
-    [dataSource]="menuItems">
-    <div *dxTemplate="let menuItem of 'item'">
-        <dx-tree-view 
-            [items]="menuItem.subMenu" 
-            class="navigation-treeview" 
-            (onItemClick)="onItemSelectionChanged($event)" 
-            [selectByClick]="true"
-            selectionMode="single">
-        </dx-tree-view>
-    </div>
-</dx-accordion>
+<dx-tree-view 
+    [items]="menuItems" 
+    class="navigation-treeview" 
+    (onItemClick)="onItemSelectionChanged($event)" 
+    [selectByClick]="true"
+    selectionMode="single">
+</dx-tree-view>
