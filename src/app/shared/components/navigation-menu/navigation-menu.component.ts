@@ -17,10 +17,10 @@ export class NavigationMenuComponent implements OnInit {
       icon: "home",
       subMenu: [{
         text: "Home",
-        path: "empty"
+        path: "home"
       }, {
         text: "About",
-        path: "empty"
+        path: "about"
       }]
     }
   ];

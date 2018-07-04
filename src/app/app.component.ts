@@ -8,12 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
   menuVisible = true;
-  selectedItem="";
 
   clickMenu(value) {
     this.menuVisible = !value;
-  }
-  selectedItemsChanged(value) {
-    this.selectedItem = value;
   }
 }

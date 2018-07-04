@@ -1,16 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Route, Routes, RouterModule } from '@angular/router';
 
-import { EmptyComponent, EmptyModule } from './pages/empty/empty.component';
+import { HomeComponent, HomeModule } from './pages/home/home.component';
+import { AboutComponent, AboutModule } from './pages/about/about.component';
 
 const routes: Routes = [{
     path: '',
-    redirectTo: 'empty',
+    redirectTo: 'home',
     pathMatch: 'full'
   }, {
-    path: 'empty',
-    component: EmptyComponent,
-    data: { title: 'Empty' }
+    path: 'home',
+    component: HomeComponent,
+    data: { title: 'Home' }
+  }, {
+    path: 'about',
+    component: AboutComponent,
+    data: { title: 'About' }
   }
 ];
 
@@ -18,7 +23,8 @@ const routes: Routes = [{
   imports: [
     RouterModule,
     RouterModule.forRoot(routes),
-    EmptyModule
+    HomeModule,
+    AboutModule
   ],
   exports: [ RouterModule ]
 })

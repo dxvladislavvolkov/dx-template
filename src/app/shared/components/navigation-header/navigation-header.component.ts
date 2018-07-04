@@ -1,4 +1,4 @@
-import { Component, NgModule, EventEmitter, Input } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { LoginModule } from '@app/components/login/login.component';
@@ -8,16 +8,10 @@ import { DxPopupModule } from 'devextreme-angular/ui/popup';
 
 @Component({
     selector: 'navigation-header',
-    templateUrl: 'navigation-header.component.html',
-    styles: [`
-        .page-name {
-            margin-left: 30px;
-        }
-    `]
+    templateUrl: 'navigation-header.component.html'
 })
 
 export class NavigationHeaderComponent {
-    @Input() selectedItem: string;
     showLoginPopup = false;
     user: any = null;
     isUserAuthorized = false;
