@@ -2,14 +2,13 @@
     <dxi-item 
         location="after"
         locateInMenu="auto"
-        [visible]="!isUserAuthorized">
-        <div *dxTemplate>
-            <dx-button
-                icon="user"
-                text="Login"
-                (onClick)="onShowLoginPopup()">
-            </dx-button>
-        </div>
+        widget="dxButton"
+        [visible]="!isUserAuthorized"
+        [options]="{
+            icon: 'user',
+            text:'Login',
+            onClick: onShowLoginPopup
+        }">
     </dxi-item>
     <dxi-item 
         location="after"
