@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'app';
   menuVisible = true;
 
-  clickMenu(value) {
+  clickOnMenuButton(value) {
     this.menuVisible = !value;
   }
 }

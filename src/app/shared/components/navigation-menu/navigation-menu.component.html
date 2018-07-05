@@ -5,9 +5,15 @@
         locateInMenu="auto"
         [options]="{
             icon: 'menu',
-            text: 'Demo',
             onClick: showMenu
         }">
+    </dxi-item>
+    <dxi-item 
+        location="center"
+        locateInMenu="auto">
+        <div *dxTemplate>
+            <h4>Demo</h4>
+        </div>
     </dxi-item>
 </dx-toolbar>
 <dx-tree-view 

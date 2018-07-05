@@ -7,11 +7,19 @@ import { DxButtonModule } from 'devextreme-angular/ui/button';
 import { DxPopupModule } from 'devextreme-angular/ui/popup';
 
 @Component({
-    selector: 'navigation-header',
-    templateUrl: 'navigation-header.component.html'
+    selector: 'header',
+    templateUrl: 'header.component.html',
+    styles: [`
+        .user-image {
+            width: 20px;
+            height: 20px;
+            float: left;
+            margin-right: 10px;
+        }
+    `]
 })
 
-export class NavigationHeaderComponent {
+export class HeaderComponent {
     showLoginPopup = false;
     user: any = null;
     isUserAuthorized = false;
@@ -37,8 +45,8 @@ export class NavigationHeaderComponent {
         DxToolbarModule,
         LoginModule
     ],
-    declarations: [ NavigationHeaderComponent ],
-    exports: [ NavigationHeaderComponent ]
+    declarations: [ HeaderComponent ],
+    exports: [ HeaderComponent ]
 })
-export class NavigationHeaderModule { }
+export class HeaderModule { }
 

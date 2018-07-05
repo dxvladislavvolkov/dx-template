@@ -8,9 +8,9 @@ import { Router } from '@angular/router';
   templateUrl: './navigation-menu.component.html'
 })
 export class NavigationMenuComponent implements OnInit {
-  @Output() onClickMenu = new EventEmitter<boolean>();
+  @Output() clickOnMenuButton = new EventEmitter<boolean>();
   @Output() selectedItemsChanged = new EventEmitter<string>();
-  @Input() isMenuOpened: boolean;
+  @Input() navigationMenuOpened: boolean;
   menuItems = [{ 
     text: "Home",
     expanded: true,
@@ -35,7 +35,7 @@ export class NavigationMenuComponent implements OnInit {
   }
 
   showMenu = () => {
-    this.onClickMenu.emit(this.isMenuOpened);
+    this.clickOnMenuButton.emit(this.navigationMenuOpened);
   }
 
   onItemSelectionChanged(event) {
