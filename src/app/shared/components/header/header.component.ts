@@ -10,11 +10,15 @@ import { DxPopupModule } from 'devextreme-angular/ui/popup';
     selector: 'header',
     templateUrl: 'header.component.html',
     styles: [`
+        .image-container {
+            float: left;
+            overflow: hidden;
+            border-radius: 50%;
+            margin-right: 10px;
+            height: 20px;
+        }
         .user-image {
             width: 20px;
-            height: 20px;
-            float: left;
-            margin-right: 10px;
         }
     `]
 })

@@ -16,7 +16,9 @@
         locateInMenu="auto"
         [visible]="isUserAuthorized">
         <div *dxTemplate>
-            <img class="user-image" src="https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/employees/01.png">
+            <div class="image-container">
+                <img class="user-image" src="https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/employees/01.png">
+            </div>
             {{user}}
         </div>
     </dxi-item>
