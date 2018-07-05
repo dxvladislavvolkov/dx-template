@@ -24,7 +24,7 @@ import { DxPopupModule } from 'devextreme-angular/ui/popup';
 
 export class HeaderComponent {
     showLoginPopup = false;
-    user: any = null;
+    userLogin: any = null;
     isUserAuthorized = false;
 
     constructor() {}
@@ -34,7 +34,7 @@ export class HeaderComponent {
     }
 
     loginClick(args) {
-        this.user = args.login;
+        this.userLogin = args.login;
         this.showLoginPopup = false;
         this.isUserAuthorized = true;
     }
