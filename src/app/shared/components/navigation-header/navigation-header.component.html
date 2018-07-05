@@ -1,33 +1,26 @@
 <dx-toolbar>
     <dxi-item 
         location="after"
-        widget="dxButton"
         locateInMenu="auto"
-        [options]="{
-            icon: 'message'
-        }">
-    </dxi-item>
-    <dxi-item 
-        location="after"
-        widget="dxButton"
-        locateInMenu="auto"
-        [visible]="!isUserAuthorized"
-        [options]="buttonOptions">
-    </dxi-item>
-    <dxi-item 
-        location="after"
-        locateInMenu="auto"
-        [visible]="!isUserAuthorized"
-        [options]="buttonOptions">
+        [visible]="!isUserAuthorized">
+        <div *dxTemplate>
+            <dx-button
+                icon="user"
+                text="Login"
+                (onClick)="onShowLoginPopup()">
+            </dx-button>
+        </div>
     </dxi-item>
     <dxi-item 
         location="after"
         locateInMenu="auto"
-        [visible]="isUserAuthorized"
-        [html]="userTemplate">
+        [visible]="isUserAuthorized">
+        <div *dxTemplate>
+            {{user}}
+        </div>
     </dxi-item>
 </dx-toolbar>
-<dx-popup [(visible)]="showLoginPopup" height="auto" [width]="300">
+<dx-popup [(visible)]="showLoginPopup" title="Login" height="auto" [width]="300">
     <div *dxTemplate="let data of 'content'">
         <app-login (onLoginClick)="loginClick($event)"></app-login>
     </div>

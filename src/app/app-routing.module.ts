@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Route, Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent, HomeModule } from './pages/home/home.component';
+import { ProfileComponent, ProfileModule } from './pages/profile/profile.component';
+import { SettingsComponent, SettingsModule } from './pages/settings/settings.component';
 import { AboutComponent, AboutModule } from './pages/about/about.component';
 
 const routes: Routes = [{
@@ -9,9 +10,13 @@ const routes: Routes = [{
     redirectTo: 'home',
     pathMatch: 'full'
   }, {
-    path: 'home',
-    component: HomeComponent,
-    data: { title: 'Home' }
+    path: 'profile',
+    component: ProfileComponent,
+    data: { title: 'Profile' }
+  }, {
+    path: 'settings',
+    component: SettingsComponent,
+    data: { title: 'Settings' }
   }, {
     path: 'about',
     component: AboutComponent,
@@ -23,7 +28,8 @@ const routes: Routes = [{
   imports: [
     RouterModule,
     RouterModule.forRoot(routes),
-    HomeModule,
+    SettingsModule,
+    ProfileModule,
     AboutModule
   ],
   exports: [ RouterModule ]

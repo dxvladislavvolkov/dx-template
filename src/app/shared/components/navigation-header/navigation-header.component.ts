@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { LoginModule } from '@app/components/login/login.component';
 import { DxToolbarModule } from 'devextreme-angular/ui/toolbar';
+import { DxButtonModule } from 'devextreme-angular/ui/button';
 import { DxPopupModule } from 'devextreme-angular/ui/popup';
 
 @Component({
@@ -14,16 +15,10 @@ export class NavigationHeaderComponent {
     showLoginPopup = false;
     user: any = null;
     isUserAuthorized = false;
-    buttonOptions = {
-        text: 'Login',
-        icon: 'user',
-        onClick: this.onShowLoginPopup.bind(this)
-    };
-    userTemplate = '<div class=\'toolbar-user\'>Some user</div>';
 
     constructor() {}
 
-    onShowLoginPopup() {
+    onShowLoginPopup = () => {
         this.showLoginPopup = true;
     }
 
@@ -38,6 +33,7 @@ export class NavigationHeaderComponent {
     imports: [
         CommonModule,
         DxPopupModule,
+        DxButtonModule,
         DxToolbarModule,
         LoginModule
     ],

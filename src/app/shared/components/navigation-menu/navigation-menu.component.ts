@@ -12,15 +12,20 @@ export class NavigationMenuComponent implements OnInit {
   @Output() selectedItemsChanged = new EventEmitter<string>();
   @Input() isMenuOpened: boolean;
   menuItems = [{ 
-    text: "Menu",
+    text: "Home",
+    expanded: true,
       icon: "home",
       items: [{
-        text: "Home",
-        path: "home"
+        text: "Profile",
+        path: "profile"
       }, {
-        text: "About",
-        path: "about"
+        text: "Settings",
+        path: "settings"
       }]
+    }, {
+      text: "About",
+      icon: "info",
+      path: "about"
     }
   ];
 
