@@ -1,7 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LoginModule } from '@app/components/login/login.component';
+import { LoginModule } from '../login/login.component';
 import { DxToolbarModule } from 'devextreme-angular/ui/toolbar';
 import { DxButtonModule } from 'devextreme-angular/ui/button';
 import { DxPopupModule } from 'devextreme-angular/ui/popup';

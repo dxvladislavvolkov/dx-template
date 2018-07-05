@@ -17,8 +17,6 @@
       "dom"
     ],
     "paths": {
-        "@app/*": ["app/*"],
-        "@app/components/*": ["app/shared/components/*"],
         "jszip": [ "../node_modules/jszip/dist/jszip.min.js" ]
     }
   }
