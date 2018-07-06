@@ -7,7 +7,7 @@ import { AboutComponent, AboutModule } from './pages/about/about.component';
 
 const routes: Routes = [{
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'profile',
     pathMatch: 'full'
   }, {
     path: 'profile',
